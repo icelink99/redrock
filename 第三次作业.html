@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+    function titlecase(str){   //tilecase是首字母大写
+        var arr1,arr2=[];       
+        arr1 = str . toLowerCase().split(" ");//将中间每个字符小写,并依据空格处进行分割
+        for(var i=0;i<arr1.length;i++){
+            arr2 . push(arr1[i][0] . toUpperCase()+arr1[i] . substring(1))//将arr1中分割好的字符挨个处理并加入arr2中
+        }
+            return arr2.join(' ');//将数组放进并添加空格
+        }
+    
+    function maopao(Array){
+            var arr=[43,23,54,676,87];
+            for(var i=0;i<arr.length-1;i++){
+                for(var j=0;j<arr.length-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    var temp=arr[j]
+                    arr[j]=arr[j+1]
+                    arr[j+1]=temp
+                }
+            }
+            }
+            console.log(arr)
+    }
+    var arr= [ [1,2] , 3,[4,[5,[6]] , 7] ];
+    function flatten(arr){ 
+        var result = []; 
+        for(var i=0;i<arr.length;i++){
+            if(Array.isArray(arr[i])){
+                result = result.concat(flatten(arr[i]));
+            }else{
+                result.push(arr[i]);
+            } 
+        } 
+        return result;
+    }
+    console.log(flatten(arr))
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
